@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web3, Explained — A Short Story of the Decentralized Web</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav>
+  <div class="brand">web3<em>.story</em></div>
+  <ul id="navLinks">
+    <li><a href="#ch1">The Problem</a></li>
+    <li><a href="#ch2">Blockchain</a></li>
+    <li><a href="#ch3">Concepts</a></li>
+    <li><a href="#ch4">A Transaction</a></li>
+    <li><a href="#wallet">Try It</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle">☰</button>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="hero-eyebrow">A short story, told in five chapters</div>
+      <h1>What if no one had to own the internet?</h1>
+      <p class="lede">Web3 isn't a coin or a buzzword — it's an argument about who holds the ledger. Scroll down and we'll walk through it, one idea at a time.</p>
+      <div class="scroll-cue"><span class="line"></span> Begin the story</div>
+    </div>
+    <div class="hero-diagram">
+      <svg viewBox="0 0 400 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line class="net-line" x1="200" y1="60" x2="90" y2="150" stroke="#c8bd9e" stroke-width="1.5"/>
+        <line class="net-line d2" x1="200" y1="60" x2="310" y2="150" stroke="#c8bd9e" stroke-width="1.5"/>
+        <line class="net-line d3" x1="90" y1="150" x2="120" y2="270" stroke="#c8bd9e" stroke-width="1.5"/>
+        <line class="net-line d4" x1="310" y1="150" x2="280" y2="270" stroke="#c8bd9e" stroke-width="1.5"/>
+        <line class="net-line" x1="90" y1="150" x2="310" y2="150" stroke="#c8bd9e" stroke-width="1.5"/>
+        <line class="net-line d2" x1="120" y1="270" x2="280" y2="270" stroke="#c8bd9e" stroke-width="1.5"/>
+        <line class="net-line d3" x1="200" y1="60" x2="200" y2="200" stroke="#c8bd9e" stroke-width="1.5"/>
+        <line class="net-line d4" x1="200" y1="200" x2="120" y2="270" stroke="#c8bd9e" stroke-width="1.5"/>
+        <line class="net-line" x1="200" y1="200" x2="280" y2="270" stroke="#c8bd9e" stroke-width="1.5"/>
+        <circle class="net-node d1" cx="200" cy="60" r="9" fill="#a9791a"/>
+        <circle class="net-node d2" cx="90" cy="150" r="7" fill="#241f16"/>
+        <circle class="net-node d3" cx="310" cy="150" r="7" fill="#241f16"/>
+        <circle class="net-node d2" cx="200" cy="200" r="6" fill="#1f6d63"/>
+        <circle class="net-node d4" cx="120" cy="270" r="7" fill="#241f16"/>
+        <circle class="net-node d5" cx="280" cy="270" r="7" fill="#241f16"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- CHAPTER 1: THE PROBLEM -->
+<section class="chapter" id="ch1">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <div class="chapter-num">01</div>
+      <div class="chapter-title-group">
+        <div class="chapter-label">Chapter One</div>
+        <h2>Today's web runs through a handful of front doors</h2>
+      </div>
+    </div>
+    <div class="chapter-body">
+      <div class="chapter-text reveal">
+        <p>Every post, payment and password you have online sits on <strong>someone else's server</strong> — a handful of companies you've never met, holding the master copy of your digital life.</p>
+        <p>That's convenient, until it isn't: one outage, one policy change, one breach, and everything routed through that single point goes down with it.</p>
+        <p>Web3 starts with a simple question: <strong>what if the ledger didn't have an owner at all?</strong></p>
+      </div>
+      <div class="chapter-diagram">
+        <svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg">
+          <rect x="150" y="30" width="80" height="60" rx="4" fill="none" stroke="#a3431f" stroke-width="1.5" class="draw-fade"/>
+          <text x="190" y="65" text-anchor="middle" fill="#a3431f" font-size="11" font-family="Inter,sans-serif" class="draw-fade">SERVER</text>
+          <g stroke="#c8bd9e" stroke-width="1.5">
+            <path class="draw-path" d="M190 90 L70 210" fill="none"/>
+            <path class="draw-path" d="M190 90 L150 220" fill="none"/>
+            <path class="draw-path" d="M190 90 L230 220" fill="none"/>
+            <path class="draw-path" d="M190 90 L310 210" fill="none"/>
+          </g>
+          <g fill="#241f16" class="draw-fade">
+            <circle cx="70" cy="220" r="10"/>
+            <circle cx="150" cy="230" r="10"/>
+            <circle cx="230" cy="230" r="10"/>
+            <circle cx="310" cy="220" r="10"/>
+          </g>
+          <text x="190" y="280" text-anchor="middle" fill="#7a7157" font-size="11" font-family="Inter,sans-serif" class="draw-fade">one node fails, everyone downstream feels it</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 2: BLOCKCHAIN -->
+<section class="chapter chapter-alt" id="ch2">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <div class="chapter-num">02</div>
+      <div class="chapter-title-group">
+        <div class="chapter-label">Chapter Two</div>
+        <h2>Blockchain rebuilds trust without a center</h2>
+      </div>
+    </div>
+    <div class="chapter-body reverse">
+      <div class="chapter-text reveal">
+        <p>Instead of one server holding the truth, a blockchain keeps <strong>thousands of identical copies</strong> — one on every participating computer, called a node.</p>
+        <p>Each new block of transactions is cryptographically stitched to the one before it. Change a single record, and every link after it breaks — which is exactly why the chain is so hard to fake.</p>
+        <p>No CEO, no admin panel. Just math and a network that agrees.</p>
+      </div>
+      <div class="chapter-diagram">
+        <svg viewBox="0 0 380 200" xmlns="http://www.w3.org/2000/svg">
+          <g class="draw-fade">
+            <rect x="10" y="70" width="70" height="60" rx="3" fill="none" stroke="#a9791a" stroke-width="1.5"/>
+            <text x="45" y="105" text-anchor="middle" fill="#a9791a" font-size="10" font-family="Inter,sans-serif">Block 1</text>
+          </g>
+          <g stroke="#a9791a" stroke-width="1.5" class="draw-path"><path d="M80 100 L110 100" fill="none"/></g>
+          <g class="draw-fade">
+            <rect x="112" y="70" width="70" height="60" rx="3" fill="none" stroke="#a9791a" stroke-width="1.5"/>
+            <text x="147" y="105" text-anchor="middle" fill="#a9791a" font-size="10" font-family="Inter,sans-serif">Block 2</text>
+          </g>
+          <g stroke="#a9791a" stroke-width="1.5" class="draw-path"><path d="M182 100 L212 100" fill="none"/></g>
+          <g class="draw-fade">
+            <rect x="214" y="70" width="70" height="60" rx="3" fill="none" stroke="#a9791a" stroke-width="1.5"/>
+            <text x="249" y="105" text-anchor="middle" fill="#a9791a" font-size="10" font-family="Inter,sans-serif">Block 3</text>
+          </g>
+          <g stroke="#1f6d63" stroke-width="1.5" stroke-dasharray="4 4" class="draw-path"><path d="M284 100 L314 100" fill="none"/></g>
+          <g class="draw-fade">
+            <rect x="316" y="70" width="55" height="60" rx="3" fill="none" stroke="#1f6d63" stroke-width="1.5"/>
+            <text x="343" y="98" text-anchor="middle" fill="#1f6d63" font-size="9" font-family="Inter,sans-serif">Block</text>
+            <text x="343" y="112" text-anchor="middle" fill="#1f6d63" font-size="9" font-family="Inter,sans-serif">4 (new)</text>
+          </g>
+          <text x="190" y="30" text-anchor="middle" fill="#7a7157" font-size="11" font-family="Inter,sans-serif" class="draw-fade">each block points back to the one before it</text>
+        </svg>
+      </div>
+    </div>
+    <div class="facts-row reveal">
+      <div class="fact-item"><h4>2009</h4><p>Bitcoin, the first blockchain, goes live</p></div>
+      <div class="fact-item"><h4>~15,000</h4><p>Cryptocurrencies built on the idea since</p></div>
+      <div class="fact-item"><h4>24/7</h4><p>The network never closes, never sleeps</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 3: CONCEPTS -->
+<section class="chapter" id="ch3">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <div class="chapter-num">03</div>
+      <div class="chapter-title-group">
+        <div class="chapter-label">Chapter Three</div>
+        <h2>Six ideas built on top of that ledger</h2>
+      </div>
+    </div>
+    <div class="concept-grid reveal">
+      <div class="concept-card">
+        <span class="mark">§</span>
+        <h3>Cryptocurrency</h3>
+        <p>Digital money that moves peer-to-peer, secured by cryptography instead of a bank in the middle.</p>
+      </div>
+      <div class="concept-card">
+        <span class="mark">§</span>
+        <h3>Smart Contracts</h3>
+        <p>Code that runs itself — "if X happens, do Y" — enforced by the network, not a middleman.</p>
+      </div>
+      <div class="concept-card">
+        <span class="mark">§</span>
+        <h3>NFTs</h3>
+        <p>A verifiable, on-chain certificate of ownership over a unique digital or real-world asset.</p>
+      </div>
+      <div class="concept-card">
+        <span class="mark">§</span>
+        <h3>DAOs</h3>
+        <p>Organizations run by token-holder votes and public code, instead of a CEO and a boardroom.</p>
+      </div>
+      <div class="concept-card">
+        <span class="mark">§</span>
+        <h3>Wallets</h3>
+        <p>Your identity and keys on-chain — no username or password, just a keypair only you hold.</p>
+      </div>
+      <div class="concept-card">
+        <span class="mark">§</span>
+        <h3>Gas Fees</h3>
+        <p>The small cost of asking the network to do work — payment for the computation, not a company.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 4: TRANSACTION FLOWCHART -->
+<section class="chapter chapter-alt" id="ch4">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <div class="chapter-num">04</div>
+      <div class="chapter-title-group">
+        <div class="chapter-label">Chapter Four</div>
+        <h2>Follow one transaction from click to permanence</h2>
+      </div>
+    </div>
+    <div class="chapter-diagram reveal" style="max-width:640px;margin:0 auto;">
+      <svg viewBox="0 0 620 160" xmlns="http://www.w3.org/2000/svg">
+        <g font-family="Inter,sans-serif" font-size="10.5">
+          <g class="draw-fade">
+            <rect x="0" y="55" width="100" height="50" rx="3" fill="none" stroke="#241f16" stroke-width="1.3"/>
+            <text x="50" y="76" text-anchor="middle" fill="#241f16">You sign a</text>
+            <text x="50" y="90" text-anchor="middle" fill="#241f16">transaction</text>
+          </g>
+          <path class="draw-path" d="M100 80 L138 80" stroke="#a9791a" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+          <g class="draw-fade">
+            <rect x="140" y="55" width="100" height="50" rx="3" fill="none" stroke="#241f16" stroke-width="1.3"/>
+            <text x="190" y="76" text-anchor="middle" fill="#241f16">Broadcast to</text>
+            <text x="190" y="90" text-anchor="middle" fill="#241f16">the network</text>
+          </g>
+          <path class="draw-path" d="M240 80 L278 80" stroke="#a9791a" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+          <g class="draw-fade">
+            <rect x="280" y="55" width="100" height="50" rx="3" fill="none" stroke="#241f16" stroke-width="1.3"/>
+            <text x="330" y="76" text-anchor="middle" fill="#241f16">Nodes verify</text>
+            <text x="330" y="90" text-anchor="middle" fill="#241f16">by consensus</text>
+          </g>
+          <path class="draw-path" d="M380 80 L418 80" stroke="#a9791a" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+          <g class="draw-fade">
+            <rect x="420" y="55" width="100" height="50" rx="3" fill="none" stroke="#241f16" stroke-width="1.3"/>
+            <text x="470" y="76" text-anchor="middle" fill="#241f16">Added to a</text>
+            <text x="470" y="90" text-anchor="middle" fill="#241f16">new block</text>
+          </g>
+          <path class="draw-path" d="M520 80 L558 80" stroke="#1f6d63" stroke-width="1.5" fill="none" marker-end="url(#arrowteal)"/>
+          <g class="draw-fade">
+            <rect x="560" y="55" width="60" height="50" rx="3" fill="none" stroke="#1f6d63" stroke-width="1.3"/>
+            <text x="590" y="76" text-anchor="middle" fill="#1f6d63">Perma-</text>
+            <text x="590" y="90" text-anchor="middle" fill="#1f6d63">nent</text>
+          </g>
+        </g>
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#a9791a"/>
+          </marker>
+          <marker id="arrowteal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#1f6d63"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 5: WALLET -->
+<section class="chapter" id="wallet">
+  <div class="wrap" style="text-align:center;">
+    <div class="chapter-head reveal" style="grid-template-columns:1fr;text-align:center;justify-items:center;">
+      <div class="chapter-title-group">
+        <div class="chapter-label">Chapter Five — the ending is yours to write</div>
+        <h2>Now try it yourself</h2>
+      </div>
+    </div>
+    <div class="wallet-panel reveal" style="margin:0 auto;">
+      <div class="fox">🦊</div>
+      <h3>Connect MetaMask</h3>
+      <p>Click below to link your wallet and see your public address appear — a real Web3 interaction, right here.</p>
+      <button class="btn" id="connectBtn">Connect Wallet</button>
+      <div class="wallet-status" id="walletStatus">No wallet connected yet.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">web3<em>.story</em></div>
+  <p>A short, honest introduction to the decentralized web.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
